@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Alina3677/lesson_3_homework.svg?branch=test)](https://travis-ci.org/Alina3677/lesson_3_homework.svg)
 # ProjectT 2015 v2 - Домашнее задание #3
 ## Задание
 - В файле `calculator.py` описан скелет класса `Calculator`. Необходимо восполнить недостающую реализацию и обеспечить качество unit-тестами
