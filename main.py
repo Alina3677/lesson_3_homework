@@ -1,12 +1,11 @@
 import re
 
-from calc import Calculator
-
+from calculator import Calculator
 
 calculator = Calculator()
 
 while True:
-    print("Menu1:\n"
+    print("Menu:\n"
           "1. Simple operation\n"
           "2. Evaluate\n"
           "0. Exit\n")
@@ -15,8 +14,16 @@ while True:
     if option == '1':
         operation = input("Which operation you want to perform? (+,-,*,/): ")
         if operation in ('+', '-', '*', '/'):
-            x = float(input("x="))
-            y = float(input("y="))
+            try:
+                x = int(input("x = "))
+            except ValueError:
+                print("Error! You must enter x an integer in base 10")
+                break
+            try:
+                y = int(input("y = "))
+            except ValueError:
+                print("Error! You must enter y an integer in base 10")
+                break
             if operation == '+':
                 result = calculator.add(x, y)
             elif operation == '-':
@@ -24,10 +31,10 @@ while True:
             elif operation == '*':
                 result = calculator.multiply(x, y)
             elif operation == '/':
-                 result = calculator.divide(x, y)
+                result = calculator.divide(x, y)
         else:
             print('Error! This operation can not be performed!')
-            continue
+            break
         print("Result: %.2f" % result)
 
     elif option == '2':
@@ -35,7 +42,7 @@ while True:
         comparison = re.compile('[^\(\)\d\*\+/-]+')
         if comparison.search(expression) is None:
             try:
-                print('Result:', calculator.evaluate(expression))
+                print('Result: %.2f', calculator.evaluate(expression))
             except IndexError:
                 print('Error! You have not entered a mathematical expression , or one of the brackets is empty!')
             except SyntaxError:
@@ -47,3 +54,4 @@ while True:
         break
     else:
         print('Error! This menu item does not exist!')
+        break

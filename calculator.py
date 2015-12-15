@@ -4,25 +4,39 @@ class Calculator:
 
     def add(self, x, y):
         """This function adds two numbers"""
-
-        raise NotImplementedError
+        try:
+            return int(x)+int(y)
+        except ValueError:
+            raise
 
     def subtract(self, x, y):
         """This function subtracts two numbers"""
 
-        raise NotImplementedError
+        try:
+            return int(x)-int(y)
+        except ValueError:
+            raise
 
     def multiply(self, x, y):
         """This function multiplies two numbers"""
 
-        raise NotImplementedError
+        try:
+            return int(x)*int(y)
+        except ValueError:
+            raise
 
     def divide(self, x, y):
         """This function divides two numbers"""
+        if y == 0:
+            raise ValueError('Error! Division by zero is impossible!')
+        try:
+            return int(x)/int(y)
+        except ValueError:
+            raise
 
-        raise NotImplementedError
 
     def evaluate(self, expression):
         """This function evaluate expression"""
 
-        raise NotImplementedError
+        return eval(expression)
+
