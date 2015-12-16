@@ -11,22 +11,22 @@ class CalculatorTest(TestCase):
 
     def test_add(self):
         self.assertEqual(self.calculator.add(0, 0), 0)
-        self.assertEqual(self.calculator.add(12, 5), 17)
-        self.assertEqual(self.calculator.add(-2, 6), 4)
-        self.assertEqual(self.calculator.add(5, -2), 3)
-        self.assertEqual(self.calculator.add(-2, -3), -5)
-        self.assertEqual(self.calculator.add(888888888888888888888888888888, 888888888888888888888888888888), 1777777777777777777777777777776)
+        self.assertEqual(self.calculator.add(5.72, 3.8), 9.52)
+        self.assertEqual(self.calculator.add(-3.2, 2.2), -1)
+        self.assertEqual(self.calculator.add(3.2, -2.2), 1)
+        self.assertEqual(self.calculator.add(-7.24, -6.5), -13.74)
+        self.assertEqual(self.calculator.add(88888888888888.3, 88888888888888.2), 177777777777776.5)
 
         self.assertRaises(ValueError, lambda: self.calculator.add('qwe', 3))
         self.assertRaises(ValueError, lambda: self.calculator.add(1, 'qwe'))
 
     def test_subtract(self):
         self.assertEqual(self.calculator.subtract(0, 0), 0)
-        self.assertEqual(self.calculator.subtract(5, 3), 2)
-        self.assertEqual(self.calculator.subtract(-3, 2), -5)
-        self.assertEqual(self.calculator.subtract(3, -2), 5)
-        self.assertEqual(self.calculator.subtract(-7, -6), -1)
-        self.assertEqual(self.calculator.subtract(-44444444444444444444444444444, -9999999999999999999999999999999999999999), 9999999999955555555555555555555555555555)
+        self.assertEqual(self.calculator.subtract(12.5, 5), 7.5)
+        self.assertEqual(self.calculator.subtract(2, -6.17), 8.17)
+        self.assertEqual(self.calculator.subtract(-5.5, 2), -7.5)
+        self.assertEqual(self.calculator.subtract(-2.5, -3.5), 1)
+        #self.assertEqual(self.calculator.subtract(-44444444444444444444444444444, -9999999999999999999999999999999999999999), 9999999999955555555555555555555555555555)
 
         self.assertRaises(ValueError, lambda: self.calculator.subtract('qwe', 3))
         self.assertRaises(ValueError, lambda: self.calculator.subtract(1, 'qwe'))
@@ -34,11 +34,10 @@ class CalculatorTest(TestCase):
 
     def test_multiply(self):
         self.assertEqual(self.calculator.multiply(0, 0), 0)
-        self.assertEqual(self.calculator.multiply(3, 3), 9)
-        self.assertEqual(self.calculator.multiply(-3, 4), -12)
-        self.assertEqual(self.calculator.multiply(2, -4), -8)
-        self.assertEqual(self.calculator.multiply(-6, -4), 24)
-        self.assertEqual(self.calculator.multiply(888888888888888888888888888888, 44444444444444444), 39506172839506172444444444444404938271604938272)
+        self.assertEqual(self.calculator.multiply(3.27, -4.5), -14.715)
+        self.assertEqual(self.calculator.multiply(-2.7, 4), -10.8)
+        self.assertEqual(self.calculator.multiply(-6.2, -4), 24.8)
+        self.assertEqual(self.calculator.multiply(13333333.33, 13333333.33), 177777777688888.9)
 
         self.assertRaises(ValueError, lambda: self.calculator.multiply('qwe', 3))
         self.assertRaises(ValueError, lambda: self.calculator.multiply(1, 'qwe'))
@@ -46,11 +45,11 @@ class CalculatorTest(TestCase):
 
     def test_divide(self):
         self.assertEqual(self.calculator.divide(0, 2), 0)
-        self.assertEqual(self.calculator.divide(5, 2), 2.5)
-        self.assertEqual(self.calculator.divide(-15, 3), -5)
-        self.assertEqual(self.calculator.divide(4, -4), -1)
-        self.assertEqual(self.calculator.divide(-10, -5), 2)
-        self.assertEqual(self.calculator.divide(666666666666666666666666666666, 3333333333333333333), 200000000000)
+        self.assertEqual(self.calculator.divide(10.5, 2), 5.25)
+        self.assertEqual(self.calculator.divide(-15.6, 3), -5.2)
+        self.assertEqual(self.calculator.divide(4.4, -4), -1.1)
+        self.assertEqual(self.calculator.divide(-10.5, -2), 5.25)
+        self.assertEqual(self.calculator.divide(177777777688888.9, 13333333.33), 13333333.330000002)
 
 
         self.assertRaises(ValueError, lambda: self.calculator.divide(1, 0))
