@@ -5,7 +5,7 @@ class Calculator:
     def add(self, x, y):
         """This function adds two numbers"""
         try:
-            return int(x)+int(y)
+            return float(x)+float(y)
         except ValueError:
             raise
 
@@ -13,7 +13,7 @@ class Calculator:
         """This function subtracts two numbers"""
 
         try:
-            return int(x)-int(y)
+            return float(x)-float(y)
         except ValueError:
             raise
 
@@ -21,7 +21,7 @@ class Calculator:
         """This function multiplies two numbers"""
 
         try:
-            return int(x)*int(y)
+            return float(x)*float(y)
         except ValueError:
             raise
 
@@ -30,7 +30,7 @@ class Calculator:
         if y == 0:
             raise ValueError('Error! Division by zero is impossible!')
         try:
-            return int(x)/int(y)
+            return float(x)/float(y)
         except ValueError:
             raise
 
