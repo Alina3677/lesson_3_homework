@@ -15,12 +15,12 @@ while True:
         operation = input("Which operation you want to perform? (+,-,*,/): ")
         if operation in ('+', '-', '*', '/'):
             try:
-                x = int(input("x = "))
+                x = float(input("x = "))
             except ValueError:
                 print("Error! You must enter x an integer in base 10")
                 break
             try:
-                y = int(input("y = "))
+                y = float(input("y = "))
             except ValueError:
                 print("Error! You must enter y an integer in base 10")
                 break
